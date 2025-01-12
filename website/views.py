@@ -29,7 +29,7 @@ def logout_user(request):
 def register_user(request):
     if request.method == 'POST':
         form = SignUpForm(request.POST)
-        if form.is_vaslid():
+        if form.is_valid():
             form.save()
             # Authenticate
             username = form.cleaned_data['username']
@@ -41,5 +41,5 @@ def register_user(request):
     else:
         form = SignUpForm()
         return render(request, 'register.html', {'form': form} )
-    
+
     return render(request, 'register.html', {'form': form} )
