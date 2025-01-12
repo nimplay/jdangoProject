@@ -1,12 +1,12 @@
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from django import forms
-from .models import Record
+""" from .models import Record """
 
 class SignUpForm(UserCreationForm):
     email = forms.EmailField(label="", widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder':'Email Address'}))
-    first_name = forms.CharField(label="", max_lenght=100, widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder':'First Name'}))
-    Last_name =  forms.CharField(label="", max_lenght=100, widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder':'Last Name'}))
+    first_name = forms.CharField(label="", max_length=100, widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder':'First Name'}))
+    Last_name =  forms.CharField(label="", max_length=100, widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder':'Last Name'}))
 
     class Meta:
         model = User
@@ -18,7 +18,7 @@ class SignUpForm(UserCreationForm):
         self.fields['username'].widget.attrs['class'] = 'form-control'
         self.fields['username'].widget.attrs['placeholder'] = 'User Name'
         self.fields['username'].label = ''
-        self.fields['username'].help_text = '<span class="form-text text-muted"><small>Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only.</small></span>'
+        self.fields['username'].help_text = '<span class="form-text text-muted"><small>Required. 100 characters or fewer. Letters, digits and @/./+/-/_ only.</small></span>'
 
         self.fields['password1'].widget.attrs['class'] = 'form-control'
         self.fields['password1'].widget.attrs['placeholder'] = 'Password'
@@ -30,7 +30,7 @@ class SignUpForm(UserCreationForm):
         self.fields['password2'].label = ''
         self.fields['password2'].help_text = '<span class="form-text text-muted"><small>Enter the same password as before, for verification.</small></span>'
 
-# Create Add Record Form
+""" # Create Add Record Form
 class AddRecordForm(forms.ModelForm):
 	first_name = forms.CharField(required=True, widget=forms.widgets.TextInput(attrs={"placeholder":"First Name", "class":"form-control"}), label="")
 	last_name = forms.CharField(required=True, widget=forms.widgets.TextInput(attrs={"placeholder":"Last Name", "class":"form-control"}), label="")
@@ -43,6 +43,6 @@ class AddRecordForm(forms.ModelForm):
 
 	class Meta:
 		model = Record
-		exclude = ("user",)
+		exclude = ("user",) """
 
 
