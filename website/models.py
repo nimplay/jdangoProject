@@ -2,8 +2,8 @@ from django.db import models
 from django.core.exceptions import ValidationError
 
 def validate_three_digits(value):
-    if not (100 <= value <= 999):
-        raise ValidationError('The value must be a three-digit number.')
+    if not (0 <= value <= 999):
+        raise ValidationError('The value must be max three-digit number.')
 
 # Create your models here.
 class Record(models.Model):
