@@ -1,5 +1,22 @@
 {% extends "base.html" %}
 {%block content%}
-<h1>Customer Record:</h1>
-
+<div class="card">
+    <div class="card-header">
+     Client ID: {{customer_record.id}}
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">{{customer_record.first_name}} {{customer_record.last_name}}</h5>
+      <p class="card-text"><b>Age: </b>{{customer_record.age}}</p>
+      <p class="card-text"><b>Email: </b>{{customer_record.email}}</p>
+      <p class="card-text"><b>Phone Number: </b>{{customer_record.phone}}</p>
+      <p class="card-text"><b>Address: </b>{{customer_record.address}}</p>
+      <p class="card-text"><b>City: </b>{{customer_record.city}}</p>
+      <p class="card-text"><b>State: </b>{{customer_record.state}}</p>
+      <p class="card-text"><b>Zip Code: </b>{{customer_record.zipcode}}</p>
+      <p class="card-text"><b>Created At: </b>{{customer_record.created_at}}</p>
+      {% comment %} <p class="card-text">Address: {{customer_record.updated_at}}</p>
+      <p class="card-text">Address: {{customer_record.deleted_at}}</p>
+     <a href="#" class="btn btn-primary">Edit</a> {% endcomment %}
+    </div>
+  </div>
 {% endblock %}
