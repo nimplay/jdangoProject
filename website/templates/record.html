@@ -14,14 +14,12 @@
       <p class="card-text"><b>State: </b>{{customer_record.state}}</p>
       <p class="card-text"><b>Zip Code: </b>{{customer_record.zipcode}}</p>
       <p class="card-text"><b>Created At: </b>{{customer_record.created_at}}</p>
-      {% comment %} <p class="card-text">Address: {{customer_record.updated_at}}</p>
-      <p class="card-text">Address: {{customer_record.deleted_at}}</p>
-     <a href="#" class="btn btn-primary">Edit</a> {% endcomment %}
     </div>
   </div>
   <br/>
   <a href="{% url 'home' %}" class="btn btn-secondary">Back</a>
   <a href="{% url 'delete_record' customer_record.id %}" class="btn btn-danger">Delete</a>
+  <a href="{% url 'update_record' customer_record.id %}" class="btn btn-primary">Update</a>
   <br/>
   <br/>
 {% endblock %}
